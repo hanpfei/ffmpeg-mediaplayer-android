@@ -1,0 +1,135 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:id="@+id/mainLayout"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+
+    <SurfaceView
+        android:id="@+id/surfaceView"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_alignParentTop="true"
+        android:visibility="visible" />
+
+    <Button
+        android:id="@+id/capture_control_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/surfaceView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:onClick="onSelectFile"
+        android:text="@string/cmd_select_file"
+        android:textAllCaps="false" />
+
+    <TextView
+        android:id="@+id/curPlayerProgress"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/capture_control_button"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@+id/playerProgressLabel"
+        android:text="@string/init_progress_val_msg"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/playerProgressLabel"
+        android:layout_gravity="start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/curPlayerProgress"
+        android:layout_marginTop="3dp"
+        android:text="@string/progress_label_msg"
+        android:visibility="visible" />
+
+    <SeekBar
+        android:id="@+id/progressSeekBar"
+        android:layout_alignParentRight="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/playerProgressLabel"
+        android:layout_centerHorizontal="true"
+        android:layout_toRightOf="@+id/playerProgressLabel"
+        android:maxHeight="3dp"
+        android:minHeight="3dp"
+        android:max="100"
+        android:progress="1" />
+
+    <TextView
+        android:id="@+id/player_url"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/progressSeekBar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:hint="@string/url_prompt_msg"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/player_open"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/player_url"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:onClick="onPlayerOpen"
+        android:text="@string/cmd_player_open"
+        android:textAllCaps="false" />
+    <Button
+        android:id="@+id/player_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/player_open"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:onClick="onPlayerPlay"
+        android:text="@string/cmd_player_play"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/player_pause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/player_play"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:onClick="onPlayerPause"
+        android:text="@string/cmd_player_pause"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/player_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/player_pause"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:onClick="onPlayerClose"
+        android:text="@string/cmd_player_close"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/get_parameter_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/statusView"
+        android:layout_alignParentStart="true"
+        android:onClick="getLowLatencyParameters"
+        android:text="@string/cmd_get_param"
+        android:textAllCaps="false" />
+
+    <TextView android:text="@string/init_status_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lines="3"
+        android:id="@+id/statusView"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>
+
