@@ -2,6 +2,7 @@
 #include "media_utils.h"
 
 #include "android_debug.h"
+#include <stdint.h>
 extern "C" {
 #include <libavutil/log.h>
 #include <libavformat/avformat.h>
