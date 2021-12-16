@@ -54,6 +54,7 @@ private:
     SwrContext *swr_ctx_;
     uint8_t **sw_src_data_;
     uint8_t **sw_dst_data_;
+    int dest_samples_per_frame_;
     std::unique_ptr<uint8_t []> resample_buffer_data_;
     int left_samples_;
 
